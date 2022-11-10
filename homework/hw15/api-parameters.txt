@@ -1,0 +1,58 @@
+{
+  "action": "addUser",
+  "username": "psmith",
+  "password": "password123"
+}
+
+{
+  "success": true,
+  "id": "1"
+}
+
+---
+{
+  "action": "addQuiz",
+  "username": "psmith",
+  "password": "password123",
+  "name": "Quiz 1"
+}
+
+{
+  "success": true,
+  "id": "1"
+}
+
+--
+{
+    "action": "addQuizItem",
+    "question": "Who is the president of Endicott College?",
+    "answer": "Dr. DiSalvo",
+    "quizId": 1
+}
+
+{
+  "success": true,
+  "id": "1"
+}
+
+----
+
+{
+    "action": "updateQuizItem",
+    "question": "Who is the president of Endicott College?",
+    "answer": "Dr. Steven DiSalvo",
+    "quizItemId": 1
+}
+----
+
+{
+  "action": "signin",
+  "username": "psmith",
+  "password": "password123"
+}
+
+
+{
+  "action": "addQuiz",
+  "name": "Quiz 2"
+}

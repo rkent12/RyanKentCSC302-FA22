@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzer Signup</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(document).on('submit', '#signup-form', function(event){
+                var data = $(this).serialize();
+                var serverData = {'username': data['username'],
+                        'password': data['password']};
+
+                if(data['password'] !== data['password2']){
+                    // Do something about it.
+                }
+
+                $.ajax('/users', {
+                    method: 'POST',
+                    data: data,
+
+                })
+                event.preventDefault();
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <h1>Quizzer Signup</h1>
+    <form id="signup-form">
+        Username: <input type="text" name="username"/><br/>
+        Password: <input type="password" name="password"/><br/>
+        Password (again): <input type="password" name="password2"/><br/>
+        <input type="submit" value="Signup!"/>
+    </form>
+</body>
+</html>
